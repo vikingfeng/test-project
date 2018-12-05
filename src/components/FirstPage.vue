@@ -1,5 +1,8 @@
 <template>
-    <img src="./assets/doraemon"/>
+    <div>
+        <!-- <img src="./assets/doraemon.jpg"> -->
+        111
+    </div>
 </template>
 <script>
 export default {
