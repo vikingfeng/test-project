@@ -2,63 +2,63 @@
   <div class="layout">
         <Layout>
             <Header>
-                <Menu mode="horizontal" theme="dark" active-name="1">
+                <Menu mode="horizontal" theme="dark" active-name="首页" @on-select="setHome">
                     <div class="layout-logo"></div>
                     <div class="layout-nav">
-                        <MenuItem name="1">
+                        <MenuItem name="首页">
                             <Icon type="ios-navigate"></Icon>
-                            Item 1
+                            首页
                         </MenuItem>
-                        <MenuItem name="2">
+                        <MenuItem name="导航2">
                             <Icon type="ios-keypad"></Icon>
-                            Item 2
+                            导航2
                         </MenuItem>
-                        <MenuItem name="3">
+                        <MenuItem name="导航3">
                             <Icon type="ios-analytics"></Icon>
-                            Item 3
+                            导航3
                         </MenuItem>
-                        <MenuItem name="4">
+                        <MenuItem name="导航4">
                             <Icon type="ios-paper"></Icon>
-                            Item 4
+                            导航4
                         </MenuItem>
                     </div>
                 </Menu>
             </Header>
             <Layout :style="{padding: '0 50px'}">
                 <Breadcrumb :style="{margin: '16px 0'}">
-                    <BreadcrumbItem>Home</BreadcrumbItem>
-                    <BreadcrumbItem>Components</BreadcrumbItem>
-                    <BreadcrumbItem>Layout</BreadcrumbItem>
+                    <BreadcrumbItem>{{home}}</BreadcrumbItem>
+                    <BreadcrumbItem>{{components}}</BreadcrumbItem>
+                    <BreadcrumbItem>{{layout}}</BreadcrumbItem>
                 </Breadcrumb>
                 <Content :style="{padding: '24px 0', minHeight: '280px', background: '#fff'}">
                     <Layout>
                         <Sider hide-trigger :style="{background: '#fff'}">
-                            <Menu active-name="1-2" theme="light" width="auto" :open-names="['1']">
+                            <Menu :active-name="layout" theme="light" width="auto" :open-names="['1']" @on-select="setLayout">
                                 <Submenu name="1">
                                     <template slot="title">
                                         <Icon type="ios-navigate"></Icon>
                                         Item 1
                                     </template>
-                                    <MenuItem name="1-1"><router-link to="first-page">111</router-link></MenuItem>
-                                    <MenuItem name="1-2">Option 2</MenuItem>
-                                    <MenuItem name="1-3">Option 3</MenuItem>
+                                    <MenuItem name="FirstPage" to="first-page">FirstPage</MenuItem>
+                                    <MenuItem name="SecondPage" to='second-page'>SecondPage</MenuItem>
+                                    <MenuItem name="1-3"><router-link to="second-page">声明式路由</router-link></MenuItem>
                                 </Submenu>
                                 <Submenu name="2">
                                     <template slot="title">
                                         <Icon type="ios-keypad"></Icon>
                                         Item 2
                                     </template>
-                                    <MenuItem name="2-1">Option 1</MenuItem>
-                                    <MenuItem name="2-2">Option 2</MenuItem>
+                                    <MenuItem name="2-1"><router-link to="first-page">声明式路由</router-link></MenuItem>
+                                    <MenuItem name="2-2"  @click="goSecond">编程式路由</MenuItem>
                                 </Submenu>
-                                <Submenu name="3">
+                                <!-- <Submenu name="3">
                                     <template slot="title">
                                         <Icon type="ios-analytics"></Icon>
                                         Item 3
                                     </template>
                                     <MenuItem name="3-1">Option 1</MenuItem>
                                     <MenuItem name="3-2">Option 2</MenuItem>
-                                </Submenu>
+                                </Submenu> -->
                             </Menu>
                         </Sider>
                         <Content :style="{padding: '24px', minHeight: '280px', background: '#fff'}">
@@ -75,7 +75,32 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  data () {
+    return {
+      home: '首页',
+      components: 'item1',
+      layout: '声明式路由'
+    };
+  },
+  methods: {
+    setLayout (name) {
+      this.layout = name;
+    },
+    setComponents (name) {
+      this.components = name;
+    },
+    setHome (name) {
+      this.home = name;
+    },
+    go (name) {
+      console.log('111', name);
+      this.$router.push({ name: 'FirstPage' });
+    },
+    goSecond () {
+      this.$router.push({ path: 'second-page' });
+    }
+  }
 };
 </script>
 

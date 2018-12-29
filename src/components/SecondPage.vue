@@ -1,6 +1,6 @@
 <template>
     <div>
-        声明式路由
+        编程式路由
     </div>
 </template>
 <script>
