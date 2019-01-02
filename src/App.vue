@@ -33,7 +33,7 @@
                 <Content :style="{padding: '24px 0', minHeight: '280px', background: '#fff'}">
                     <Layout>
                         <Sider hide-trigger :style="{background: '#fff'}">
-                            <Menu :active-name="layout" theme="light" width="auto" :open-names="['1']" @on-select="setLayout">
+                            <Menu :active-name="layout" theme="light" width="auto" :open-names="['2']" @on-select="setLayout">
                                 <Submenu name="1">
                                     <template slot="title">
                                         <Icon type="ios-navigate"></Icon>
@@ -41,15 +41,15 @@
                                     </template>
                                     <MenuItem name="FirstPage" to="first-page">FirstPage</MenuItem>
                                     <MenuItem name="SecondPage" to='second-page'>SecondPage</MenuItem>
-                                    <MenuItem name="1-3"><router-link to="second-page">声明式路由</router-link></MenuItem>
+                                    <MenuItem name="1-3" to="second-page">声明式路由</MenuItem>
                                 </Submenu>
                                 <Submenu name="2">
                                     <template slot="title">
                                         <Icon type="ios-keypad"></Icon>
-                                        Item 2
+                                        Float
                                     </template>
-                                    <MenuItem name="2-1"><router-link to="first-page">声明式路由</router-link></MenuItem>
-                                    <MenuItem name="2-2"  @click="goSecond">编程式路由</MenuItem>
+                                    <MenuItem name="2-1" to="float-page">float示例</MenuItem>
+                                    <MenuItem name="2-2" to="clear-page">清除浮动</MenuItem>
                                 </Submenu>
                                 <!-- <Submenu name="3">
                                     <template slot="title">
@@ -67,7 +67,7 @@
                     </Layout>
                 </Content>
             </Layout>
-            <Footer class="layout-footer-center">2011-2016 &copy; TalkingData</Footer>
+            <Footer class="layout-footer-center">2018-2019 &copy; feng</Footer>
         </Layout>
     </div>
 </div>
@@ -92,13 +92,6 @@ export default {
     },
     setHome (name) {
       this.home = name;
-    },
-    go (name) {
-      console.log('111', name);
-      this.$router.push({ name: 'FirstPage' });
-    },
-    goSecond () {
-      this.$router.push({ path: 'second-page' });
     }
   }
 };
