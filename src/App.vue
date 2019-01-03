@@ -48,8 +48,8 @@
                                         <Icon type="ios-keypad"></Icon>
                                         Float
                                     </template>
-                                    <MenuItem name="2-1" to="float-page">float示例</MenuItem>
-                                    <MenuItem name="2-2" to="clear-page">清除浮动</MenuItem>
+                                    <MenuItem name="float示例" to="float-page">float示例</MenuItem>
+                                    <MenuItem name="清除浮动" to="clear-page">清除浮动</MenuItem>
                                 </Submenu>
                                 <!-- <Submenu name="3">
                                     <template slot="title">
@@ -106,14 +106,16 @@ export default {
     overflow: hidden;
 }
 .layout-logo{
-    width: 100px;
+    width:234px;
     height: 30px;
-    background: #5b6270;
+    /* background: #5b6270; */
+    background: url(./assets/fengzi.png) no-repeat;
+    background-size: 100% 100%;
     border-radius: 3px;
     float: left;
     position: relative;
-    top: 15px;
-    left: 20px;
+    top: 17px;
+    /* left: 20px; */
 }
 .layout-nav{
     width: 420px;

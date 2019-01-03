@@ -16,15 +16,23 @@ export default new Router({
       component: HelloWorld
     },
     {
-      path: '/first-page',
-      name: 'FirstPage',
-      component: FirstPage
-    },
-    {
       path: '/second-page',
       name: 'SecondPage',
       component: SecondPage
     },
+    {
+      path: '/first-page',
+      name: 'FirstPage',
+      component: FirstPage,
+      children: [
+        {
+          path: '/page-second',
+          name: 'PageSecond',
+          component: SecondPage
+        }
+      ]
+    },
+
     {
       path: '/float-page',
       name: 'FloatPage',
