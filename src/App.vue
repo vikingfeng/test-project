@@ -5,15 +5,15 @@
                 <Menu mode="horizontal" theme="dark" active-name="首页" @on-select="setHome">
                     <div class="layout-logo"></div>
                     <div class="layout-nav">
-                        <MenuItem name="首页">
+                        <MenuItem name="首页" to="vue-page">
                             <Icon type="ios-navigate"></Icon>
-                            首页
+                            Vue
                         </MenuItem>
-                        <MenuItem name="导航2">
+                        <MenuItem name="导航2" to="css-page">
                             <Icon type="ios-keypad"></Icon>
-                            导航2
+                            Css
                         </MenuItem>
-                        <MenuItem name="导航3">
+                        <MenuItem name="导航3" to="css-page">
                             <Icon type="ios-analytics"></Icon>
                             导航3
                         </MenuItem>
@@ -24,15 +24,16 @@
                     </div>
                 </Menu>
             </Header>
-            <Layout :style="{padding: '0 50px'}">
+            <!-- <Layout :style="{padding: '0 50px'}">
                 <Breadcrumb :style="{margin: '16px 0'}">
                     <BreadcrumbItem>{{home}}</BreadcrumbItem>
                     <BreadcrumbItem>{{components}}</BreadcrumbItem>
                     <BreadcrumbItem>{{layout}}</BreadcrumbItem>
-                </Breadcrumb>
-                <Content :style="{padding: '24px 0', minHeight: '280px', background: '#fff'}">
-                    <Layout>
-                        <Sider hide-trigger :style="{background: '#fff'}">
+                </Breadcrumb> -->
+                <Content :style="{padding: '24px', minHeight: '280px', background: '#fff'}">
+
+                    <!-- <Layout> -->
+                        <!--<Sider hide-trigger :style="{background: '#fff'}">
                             <Menu :active-name="layout" theme="light" width="auto" :open-names="['2']" @on-select="setLayout">
                                 <Submenu name="1">
                                     <template slot="title">
@@ -51,20 +52,20 @@
                                     <MenuItem name="float示例" to="float-page">float示例</MenuItem>
                                     <MenuItem name="清除浮动" to="clear-page">清除浮动</MenuItem>
                                 </Submenu>
-                                <!-- <Submenu name="3">
+                                <Submenu name="3">
                                     <template slot="title">
                                         <Icon type="ios-analytics"></Icon>
                                         Item 3
                                     </template>
                                     <MenuItem name="3-1">Option 1</MenuItem>
                                     <MenuItem name="3-2">Option 2</MenuItem>
-                                </Submenu> -->
+                                </Submenu>
                             </Menu>
-                        </Sider>
-                        <Content :style="{padding: '24px', minHeight: '280px', background: '#fff'}">
+                        </Sider> -->
+                        <!-- <Content :style="{padding: '24px', minHeight: '280px', background: '#fff'}"> -->
                             <router-view></router-view>
-                        </Content>
-                    </Layout>
+                        <!-- </Content> -->
+                    <!-- </Layout> -->
                 </Content>
             </Layout>
             <Footer class="layout-footer-center">2018-2019 &copy; feng</Footer>
@@ -109,7 +110,7 @@ export default {
     width:234px;
     height: 30px;
     /* background: #5b6270; */
-    background: url(./assets/fengzi.png) no-repeat;
+    background: url(assets/fengzi.png) no-repeat;
     background-size: 100% 100%;
     border-radius: 3px;
     float: left;

@@ -13,35 +13,74 @@ export default new Router({
     {
       path: '/',
       name: 'HelloWorld',
-      component: () => import('@/components/HelloWorld')
+      component: () => import('@/components/VueTest')
     },
     {
-      path: '/second-page',
-      name: 'SecondPage',
-      component: () => import('@/views/vue-router/SecondPage')
-    },
-    {
-      path: '/first-page',
-      name: 'FirstPage',
-      component: () => import('@/views/vue-router/FirstPage'),
+      path: '/vue-page',
+      name: 'VueTest',
+      component: () => import('@/components/VueTest'),
       children: [
         {
-          path: '/page-second',
-          name: 'PageSecond',
+          path: '/',
+          name: 'VueIndexPage',
           component: () => import('@/views/vue-router/SecondPage')
+        },
+        {
+          path: '/second-page',
+          name: 'SecondPage',
+          component: () => import('@/views/vue-router/SecondPage')
+        },
+        {
+          path: '/first-page',
+          name: 'FirstPage',
+          component: () => import('@/views/vue-router/FirstPage'),
+          children: [
+            {
+              path: '/page-second',
+              name: 'PageSecond',
+              component: () => import('@/views/vue-router/SecondPage')
+            }
+          ]
+        },
+        {
+          path: '/name-view',
+          name: 'NameView',
+          component: () => import('@/views/vue-router/NameView'),
+          children: [
+            {
+              path: '/name-page-second',
+              name: 'NamePageSecond',
+              components: {
+                default: () => import('@/views/vue-router/SecondPage'),
+                view2: () => import('@/views/vue-router/FirstPage')
+              }
+            }
+          ]
         }
       ]
     },
-
     {
-      path: '/float-page',
-      name: 'FloatPage',
-      component: () => import('@/views/css/float/FloatPage')
-    },
-    {
-      path: '/clear-page',
-      name: 'ClearPage',
-      component: () => import('@/views/css/float/ClearPage')
+      path: '/css-page',
+      name: 'Css',
+      component: () => import('@/components/Css'),
+      children: [
+        {
+          path: '/',
+          name: 'CssIndexPage',
+          component: () => import('@/views/css/float/FloatPage')
+        },
+        {
+          path: '/float-page',
+          name: 'FloatPage',
+          component: () => import('@/views/css/float/FloatPage')
+        },
+        {
+          path: '/clear-page',
+          name: 'ClearPage',
+          component: () => import('@/views/css/float/ClearPage')
+        }
+      ]
     }
+
   ]
 });
