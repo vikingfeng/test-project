@@ -10,8 +10,8 @@
                 <Content>
                     <Layout>
                         <Sider hide-trigger :style="{background: '#fff'}">
-                            <Menu :active-name="layout" theme="light" width="auto" :open-names="['1']" @on-select="setLayout">
-                                <Submenu name="1">
+                            <Menu :active-name="layout" theme="light" width="auto" :open-names="['Vue Router']" accordion @on-open-change="setComponents" @on-select="setLayout" >
+                                <Submenu name="Vue Router">
                                     <template slot="title">
                                         <Icon type="ios-navigate"></Icon>
                                         Vue Router
@@ -20,7 +20,7 @@
                                     <MenuItem name="SecondPage" to='second-page'>SecondPage</MenuItem>
                                     <MenuItem name="命名视图" to="name-view">命名视图</MenuItem>
                                 </Submenu>
-                                <Submenu name="2">
+                                <Submenu name="VueX">
                                     <template slot="title">
                                         <Icon type="ios-keypad"></Icon>
                                         VueX
@@ -55,7 +55,7 @@ export default {
   name: 'App',
   data () {
     return {
-      components: 'Item 1',
+      components: 'Vue Router',
       layout: 'FirstPage'
     };
   },
@@ -64,7 +64,9 @@ export default {
       this.layout = name;
     },
     setComponents (name) {
-      this.components = name;
+      if (name.length) {
+        this.components = name[0];
+      }
     }
   }
 };
