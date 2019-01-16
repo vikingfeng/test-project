@@ -25,7 +25,7 @@
                                         <Icon type="ios-keypad"></Icon>
                                         VueX
                                     </template>
-                                    <MenuItem name="float示例" to="">示例</MenuItem>
+                                    <MenuItem name="vuex测试" to="vuex-test">vuex测试</MenuItem>
 
                                 </Submenu>
                                 <!-- <Submenu name="3">

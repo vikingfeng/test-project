@@ -15,13 +15,14 @@ export default new Router({
       name: 'HelloWorld',
       component: () => import('@/components/VueTest')
     },
+    // vue
     {
       path: '/vue-page',
       name: 'VueTest',
       component: () => import('@/components/VueTest'),
       children: [
         {
-          path: '/',
+          path: 'vue-index-page',
           name: 'VueIndexPage',
           component: () => import('@/views/vue-router/SecondPage')
         },
@@ -56,9 +57,23 @@ export default new Router({
               }
             }
           ]
+        },
+        // vuex
+        {
+          path: '/vuex-test',
+          name: 'VuexTest',
+          component: () => import('@/views/vue-vuex/VuexTest'),
+          children: [
+            {
+              path: '/page-second',
+              name: 'PageSecond',
+              component: () => import('@/views/vue-router/SecondPage')
+            }
+          ]
         }
       ]
     },
+    // css
     {
       path: '/css-page',
       name: 'Css',
