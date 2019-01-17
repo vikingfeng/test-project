@@ -22,7 +22,7 @@ export default new Router({
       component: () => import('@/components/VueTest'),
       children: [
         {
-          path: 'vue-index-page',
+          path: '/vue-index-page',
           name: 'VueIndexPage',
           component: () => import('@/views/vue-router/SecondPage')
         },
@@ -64,11 +64,11 @@ export default new Router({
           name: 'VuexTest',
           component: () => import('@/views/vue-vuex/VuexTest'),
           children: [
-            {
-              path: '/page-second',
-              name: 'PageSecond',
-              component: () => import('@/views/vue-router/SecondPage')
-            }
+            // {
+            //   path: '/page-second',
+            //   name: 'PageSecond',
+            //   component: () => import('@/views/vue-router/SecondPage')
+            // }
           ]
         }
       ]
@@ -80,7 +80,7 @@ export default new Router({
       component: () => import('@/components/Css'),
       children: [
         {
-          path: '/',
+          path: '/css-index-page',
           name: 'CssIndexPage',
           component: () => import('@/views/css/float/FloatPage')
         },

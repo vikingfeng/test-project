@@ -7,7 +7,8 @@ const store = new Vuex.Store({
   // 定义状态
   state: {
     author: 'Viking Feng',
-    level: '小白'
+    level: '小白',
+    way: ''
   },
   mutations: {
     setAuthor (state, author) {
@@ -15,10 +16,15 @@ const store = new Vuex.Store({
     },
     promotionLevel (state, level) {
       state.level = level;
+    },
+    showWay (state, way) {
+      state.way = way;
     }
   },
   actions: {
-
+    changeAction (context) {
+      context.commit('setAuthor', 'changebyaction');
+    }
   }
 });
 
