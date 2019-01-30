@@ -15,7 +15,7 @@ export default new Router({
       name: 'HelloWorld',
       component: () => import('@/components/VueTest')
     },
-    // vue
+    // 一、vue 模块
     {
       path: '/vue-page',
       name: 'VueTest',
@@ -73,7 +73,7 @@ export default new Router({
         }
       ]
     },
-    // css
+    // 二、css模块
     {
       path: '/css-page',
       name: 'Css',
