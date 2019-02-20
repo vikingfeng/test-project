@@ -13,9 +13,9 @@
                             <Icon type="ios-keypad"></Icon>
                             Css
                         </MenuItem>
-                        <MenuItem name="导航3" to="css-page">
+                        <MenuItem name="导航3" to="js-page">
                             <Icon type="ios-analytics"></Icon>
-                            导航3
+                            JavaScript
                         </MenuItem>
                         <MenuItem name="导航4">
                             <Icon type="ios-paper"></Icon>

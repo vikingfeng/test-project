@@ -8,13 +8,13 @@ import Vuex from 'vuex';
 import store from './vuex/store';
 import iView from 'iview';
 import 'iview/dist/styles/iview.css';
+import axios from 'axios';
 
 Vue.use(VueRouter);
 Vue.use(Vuex);
 Vue.use(iView);
-
 Vue.config.productionTip = false;
-
+Vue.prototype.$ajax = axios;
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

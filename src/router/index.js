@@ -95,6 +95,20 @@ export default new Router({
           component: () => import('@/views/css/float/ClearPage')
         }
       ]
+    },
+    // 三、JavaScript
+    {
+      path: '/js-page',
+      name: 'JavaScript',
+      component: () => import('@/components/JavaScript'),
+      children: [
+        {
+          path: '/basic-concept',
+          name: 'BasicConcept',
+          component: () => import('@/views/JavaScript/BasicKnowledge/BasicConcept')
+        }
+
+      ]
     }
 
   ]
