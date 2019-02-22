@@ -9,6 +9,7 @@ import store from './vuex/store';
 import iView from 'iview';
 import 'iview/dist/styles/iview.css';
 import axios from 'axios';
+// import '@/assets/common.less';
 
 Vue.use(VueRouter);
 Vue.use(Vuex);

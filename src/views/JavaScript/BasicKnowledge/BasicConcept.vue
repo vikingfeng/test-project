@@ -38,9 +38,48 @@
             </p>
         </Panel>
         <Panel name="3">
-            乔纳森·伊夫
+            String类型
             <p slot="content">
-
+              <ul>
+              <li>数值、布尔值、对象和字符串值（没错，每个字符串也都有一个 <span class="red">toString()</span> 方法，该方法返回字
+                  符串的一个副本）都有 toString() 方法。但 null 和 undefined 值没有这个方法。
+              </li>
+              <li>可以使用<span class="red">转型函数 String()</span> ，
+               String() 函数遵循下列转换规则：
+                <ol style="padding-left:25px">
+                  <li>如果值有 toString() 方法，则调用该方法（没有参数）并返回相应的结果</li>
+                  <li>如果值是 null ，则返回 "null" ；</li>
+                  <li> 如果值是 undefined ，则返回 "undefined"</li>
+                </ol>
+              </li>
+              </ul>
+            </p>
+        </Panel>
+        <Panel name="3">
+            操作符
+            <p slot="content">
+              <ul>
+              <li> 一元加和减操作符
+                放在数值前面，对数值不会产生任何影响，不过，在对非数值应用一元加操作符时，
+                该操作符会像 Number() 转型函数一样对这个值执行转换
+                <ol style="padding-left:25px">
+                  <li>var s1 = "01"; <span class="red">=></span> s1 = +s1; <span class="green">// 值变成数值 1</span></li>
+                  <li>var s2 = "1.1"; <span class="red">=></span> s2 = +s2; <span class="green">// 值变成数值 1.1</span></li>
+                  <li>var s3 = "z"; <span class="red">=></span> s3 = +s3; <span class="green">// 值变成 NaN</span></li>
+                  <li>var b = false; <span class="red">=></span> b = +b; <span class="green">// 值变成数值 0</span></li>
+                  <li>var f = 1.1; <span class="red">=></span> f = +f; <span class="green">// 值未变，仍然是 1.1</span></li>
+                  <li>var o = {valueOf: function() { return -1;} <span class="red">=></span>o = +o;<span class="green">// 值变成数值-1</span></li>
+                </ol>
+              </li>
+              <li>可以使用<span class="red">转型函数 String()</span> ，
+               String() 函数遵循下列转换规则：
+                <ol style="padding-left:25px">
+                  <li>如果值有 toString() 方法，则调用该方法（没有参数）并返回相应的结果</li>
+                  <li>如果值是 null ，则返回 "null" ；</li>
+                  <li> 如果值是 undefined ，则返回 "undefined"</li>
+                </ol>
+              </li>
+              </ul>
             </p>
         </Panel>
     </Collapse>
@@ -50,7 +89,7 @@ export default {
   name: 'BasicConcept',
   data () {
     return {
-      value: 1
+      value: '1'
     };
   }
 
@@ -60,6 +99,9 @@ export default {
 .basic-concept{
   .red{
     color: red;
+  }
+  .green{
+    color: green;
   }
 }
 </style>
