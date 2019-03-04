@@ -3,7 +3,7 @@
         <Layout style="">
             <Layout >
                 <Breadcrumb :style="{margin: '16px 10px'}">
-                    <BreadcrumbItem>JavaScript</BreadcrumbItem>
+                    <BreadcrumbItem>Expansion</BreadcrumbItem>
                     <BreadcrumbItem>{{components}}</BreadcrumbItem>
                     <BreadcrumbItem>{{layout}}</BreadcrumbItem>
                 </Breadcrumb>
@@ -14,10 +14,10 @@
                                 <Submenu name="1">
                                     <template slot="title">
                                         <Icon type="ios-navigate"></Icon>
-                                        基础知识
+                                        扩展
                                     </template>
-                                    <MenuItem name="float示例" to="basic-concept">基础概念</MenuItem>
-                                    <!-- <MenuItem name="清除浮动" to="clear-page">清除浮动</MenuItem> -->
+                                    <MenuItem name="地图" to="basic-concept">地图</MenuItem>
+                                    <MenuItem name="清除浮动" to="clear-page">图表</MenuItem>
                                 </Submenu>
                                 <!-- <Submenu name="2">
                                     <template slot="title">
@@ -53,9 +53,9 @@ export default {
   name: 'App',
   data () {
     return {
-    //   home: 'JS',
-      components: '基础知识',
-      layout: '基础概念'
+    //   home: 'Expansion',
+      components: '扩展',
+      layout: '地图'
     };
   },
   methods: {

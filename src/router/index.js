@@ -109,6 +109,20 @@ export default new Router({
         }
 
       ]
+    },
+    // 四、Expansion
+    {
+      path: '/expansion-page',
+      name: 'Expansion',
+      component: () => import('@/components/Expansion'),
+      children: [
+        {
+          path: '/basic-concept',
+          name: 'BasicConcept',
+          component: () => import('@/views/JavaScript/BasicKnowledge/BasicConcept')
+        }
+
+      ]
     }
 
   ]

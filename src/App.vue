@@ -15,11 +15,11 @@
                         </MenuItem>
                         <MenuItem name="导航3" to="js-page">
                             <Icon type="ios-analytics"></Icon>
-                            JavaScript
+                            JS
                         </MenuItem>
-                        <MenuItem name="导航4">
+                        <MenuItem name="导航4" to="expansion-page">
                             <Icon type="ios-paper"></Icon>
-                            导航4
+                            Expansion
                         </MenuItem>
                     </div>
                 </Menu>
