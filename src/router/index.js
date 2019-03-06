@@ -106,6 +106,11 @@ export default new Router({
           path: '/basic-concept',
           name: 'BasicConcept',
           component: () => import('@/views/JavaScript/BasicKnowledge/BasicConcept')
+        },
+        {
+          path: '/chapter-page45',
+          name: 'Chapter45',
+          component: () => import('@/views/JavaScript/BasicKnowledge/Chapter45')
         }
 
       ]

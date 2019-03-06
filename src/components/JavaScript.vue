@@ -16,8 +16,8 @@
                                         <Icon type="ios-navigate"></Icon>
                                         基础知识
                                     </template>
-                                    <MenuItem name="float示例" to="basic-concept">基础概念</MenuItem>
-                                    <!-- <MenuItem name="清除浮动" to="clear-page">清除浮动</MenuItem> -->
+                                    <MenuItem name="基础概念" to="basic-concept">基础概念</MenuItem>
+                                    <MenuItem name="Chapter4+5" to="chapter-page45">Chapter4、5</MenuItem>
                                 </Submenu>
                                 <!-- <Submenu name="2">
                                     <template slot="title">

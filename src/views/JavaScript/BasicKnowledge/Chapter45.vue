@@ -1,8 +1,7 @@
 <template>
 <Collapse v-model="value" class="basic-concept">
-        第 4章 变量、作用域和内存问题
         <Panel name="1">
-            复制变量值
+             第 4章 -- 复制变量值
             <div slot="content">
               <ul>
               <li>除了保存的方式不同之外，在从一个变量向另一个变量复制基本类型值和引用类型值时，也存在不
@@ -27,53 +26,37 @@
                   因为这两个变量引用的都是同一个对象。图 4-2 展示了保存在变量对象中的变量和保存在堆中的对象之
                   间的这种关系。
               </li>
-              <li>标识符，就是指变量、函数、属性的名字，或者函数的参数<br>
-              规则：
-                <ol style="padding-left:25px">
-                  <li>第一个字符必须是一个字母、下划线（ _ ）或一个美元符号（ $ ）；</li>
-                  <li> 其他字符可以是字母、下划线、美元符号或数字</li>
-                  <li>尽量使用采用驼峰大小写格式，也就是第一个字母小写，剩下的每个单词的首字母大写</li>
-                </ol>
-              </li>
-              <li>关键字和保留字</li>
               </ul>
             </div>
         </Panel>
         <Panel name="2">
-            数据类型(6种)
+            第5章 --引用类型之Object 类型
             <p slot="content">
               <ul>
-              <li>ECMAScript 中有 5 种简单数据类型（也称为基本数据类型）： <span class="red">Undefined 、 Null 、 Boolean 、 Number和 String</span> 。<br>
-                  还有 1种复杂数据类型—— <span class="red">Object</span> ， Object 本质上是由一组无序的名值对组成的
+              <li>访问对象属性时使用的都是<span class="red">点表示法person.name</span>，
+              在 JavaScript 也可以使用<span class="red">方括号表示法-person["name"]</span> 来访问对象的属性。
+              除非必须使用变量来访问属性，否则我们建议使用点表示法<br>
               </li>
-              <li>typeof 操作符可能返回下列某个字符串：
+              <li>方括号语法的主要优点是：
                 <ol style="padding-left:25px">
-                  <li>"undefined" ——如果这个值未定义（只声明了变量，但未对其进行初始化）；</li>
-                  <li>"boolean" ——如果这个值是布尔值；</li>
-                  <li>"string" ——如果这个值是字符串</li>
-                  <li>"number" ——如果这个值是数值；</li>
-                  <li>"object" ——如果这个值是<span class="red">对象或 null</span> ；</li>
-                  <li>"function" ——如果这个值是函数。</li>
+                  <li>可以<span class="red">通过变量来访问属性</span></li>
+                  <li>var propertyName = "name";
+                    alert(person[propertyName]);</li>
+                  <li>如果属性名中包含会导致语法错误的字符，或者属性名使用的是关键字或保留字，也可以使用方括号表示法</li>
+                  <li>eg: person["first name"] = "Nicholas";由于 <span class="red">"first name" 中包含一个空格</span>，所以不能使用点表示法来访问它。<br />
+                    然而，属性名中是可以包含非字母非数字的，这时候就可以使用方括号表示法来访问它们</li>
                 </ol>
               </li>
               </ul>
             </p>
         </Panel>
         <Panel name="3">
-            String类型
+            判断是否Array类型
             <p slot="content">
               <ul>
-              <li>数值、布尔值、对象和字符串值（没错，每个字符串也都有一个 <span class="red">toString()</span> 方法，该方法返回字
-                  符串的一个副本）都有 toString() 方法。但 null 和 undefined 值没有这个方法。
-              </li>
-              <li>可以使用<span class="red">转型函数 String()</span> ，
-               String() 函数遵循下列转换规则：
-                <ol style="padding-left:25px">
-                  <li>如果值有 toString() 方法，则调用该方法（没有参数）并返回相应的结果</li>
-                  <li>如果值是 null ，则返回 "null" ；</li>
-                  <li> 如果值是 undefined ，则返回 "undefined"</li>
-                </ol>
-              </li>
+              <li>value instanceof Array </li>
+
+              <li>Array.isArray(value)</li>
               </ul>
             </p>
         </Panel>
