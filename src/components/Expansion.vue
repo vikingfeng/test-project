@@ -16,6 +16,7 @@
                                         <Icon type="ios-navigate"></Icon>
                                         扩展
                                     </template>
+                                    <MenuItem name="JS执行机制" to="execution-mechanism">JS执行机制</MenuItem>
                                     <MenuItem name="地图" to="basic-concept">地图</MenuItem>
                                     <MenuItem name="清除浮动" to="clear-page">图表</MenuItem>
                                 </Submenu>

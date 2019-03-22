@@ -122,9 +122,9 @@ export default new Router({
       component: () => import('@/components/Expansion'),
       children: [
         {
-          path: '/basic-concept',
-          name: 'BasicConcept',
-          component: () => import('@/views/JavaScript/BasicKnowledge/BasicConcept')
+          path: '/execution-mechanism',
+          name: 'ExecutionMechanism',
+          component: () => import('@/views/expansion/ExecutionMechanism')
         }
 
       ]

@@ -64,48 +64,16 @@
             操作符
             <p slot="content">
               <ul>
-              <li> 在传递给这些方法的参数是负值的情况下，它们的行为就不尽相同了。其中， slice() 方法会将传
-                入的负值与字符串的长度相加， substr() 方法将负的第一个参数加上字符串的长度，而将负的第二个
-                参数转换为 0。最后， substring() 方法会把所有负值参数都转换为 0。
-
+              <li> 一元加和减操作符
+                放在数值前面，对数值不会产生任何影响，不过，在对非数值应用一元加操作符时，
+                该操作符会像 Number() 转型函数一样对这个值执行转换
                 <ol style="padding-left:25px">
-                  var stringValue = "hello world";
-                  <li><span class="red">alert(stringValue.slice(-3));</span> <span class="green">//"rld"</span></li>
-                  <li><span class="red">alert(stringValue.substring(-3));</span> <span class="green">//"hello world"</span></li>
-                  <li><span class="red">alert(stringValue.substr(-3));</span> <span class="green">//"rld"</span></li>
-                  <li><span class="red">alert(stringValue.slice(3, -4));</span> <span class="green">//"lo w"</span></li>
-                  <li><span class="red">alert(stringValue.substring(3, -4));</span> <span class="green">//"hel"</span></li>
-                  <li><span class="red">alert(stringValue.substr(3, -4));</span> f = +f; <span class="green">//"" （空字符串）</span></li>
-                </ol>
-              </li>
-              <li>逻辑非操作符也可以用于将一个值转换为与其对应的布尔值。而同时使用两个逻辑非操作符<span class="red">(eg: !!'red'=>true)</span>，
-              实际上就会模拟 Boolean() 转型函数的行为。</li>
-              <li>逻辑与(&&)、逻辑或(||)操作属于 <span class="red">短路操作</span>，即如果第一个操作数能够决定结果，那么就不会再对第二个操作数求值。</span> ，
-               String() 函数遵循下列转换规则：
-                <ol style="padding-left:25px">
-                  <li>对于逻辑与操作(&&)而言，如果第一个操作数是 false ，则无论第二个操作数是什么值，结果都不再可能是true 了。</li>
-                  <li>对于逻辑或操作(||)而言，如果第一个操作数的求值结果为true ，就不会对第二个操作数求值了。</li>
-                </ol>
-              </li>
-              </ul>
-            </p>
-        </Panel>
-        <Panel name="4">
-            String 类型
-            <p slot="content">
-              <ul>
-              <li> 在传递给这些方法的参数是负值的情况下，它们的行为就不尽相同了。其中， slice() 方法会将传
-                入的负值与字符串的长度相加， substr() 方法将负的第一个参数加上字符串的长度，而将负的第二个
-                参数转换为 0。最后， substring() 方法会把所有负值参数都转换为 0。
-
-                <ol style="padding-left:25px">
-                  var stringValue = "hello world";
-                  <li><span class="red">alert(stringValue.slice(-3));</span> <span class="green">//"rld"</span></li>
-                  <li><span class="red">alert(stringValue.substring(-3));</span> <span class="green">//"hello world"</span></li>
-                  <li><span class="red">alert(stringValue.substr(-3));</span> <span class="green">//"rld"</span></li>
-                  <li><span class="red">alert(stringValue.slice(3, -4));</span> <span class="green">//"lo w"</span></li>
-                  <li><span class="red">alert(stringValue.substring(3, -4));</span> <span class="green">//"hel"</span></li>
-                  <li><span class="red">alert(stringValue.substr(3, -4));</span> f = +f; <span class="green">//"" （空字符串）</span></li>
+                  <li>var s1 = "01"; <span class="red">=></span> s1 = +s1; <span class="green">// 值变成数值 1</span></li>
+                  <li>var s2 = "1.1"; <span class="red">=></span> s2 = +s2; <span class="green">// 值变成数值 1.1</span></li>
+                  <li>var s3 = "z"; <span class="red">=></span> s3 = +s3; <span class="green">// 值变成 NaN</span></li>
+                  <li>var b = false; <span class="red">=></span> b = +b; <span class="green">// 值变成数值 0</span></li>
+                  <li>var f = 1.1; <span class="red">=></span> f = +f; <span class="green">// 值未变，仍然是 1.1</span></li>
+                  <li>var o = {valueOf: function() { return -1;} <span class="red">=></span>o = +o;<span class="green">// 值变成数值-1</span></li>
                 </ol>
               </li>
               <li>逻辑非操作符也可以用于将一个值转换为与其对应的布尔值。而同时使用两个逻辑非操作符<span class="red">(eg: !!'red'=>true)</span>，
