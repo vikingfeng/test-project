@@ -22,10 +22,9 @@
                                 <Submenu name="2">
                                     <template slot="title">
                                         <Icon type="ios-keypad"></Icon>
-                                        Float
+                                        Tips
                                     </template>
-                                    <MenuItem name="float示例" to="float-page">float示例</MenuItem>
-                                    <MenuItem name="清除浮动" to="clear-page">清除浮动</MenuItem>
+                                    <MenuItem name="布局小技巧" to="css-some-tips">布局小技巧</MenuItem>
                                 </Submenu>
                                 <!-- <Submenu name="3">
                                     <template slot="title">

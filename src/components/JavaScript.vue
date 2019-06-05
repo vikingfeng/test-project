@@ -3,31 +3,30 @@
         <Layout style="">
             <Layout >
                 <Breadcrumb :style="{margin: '16px 10px'}">
-                    <BreadcrumbItem>Vue</BreadcrumbItem>
+                    <BreadcrumbItem>JavaScript</BreadcrumbItem>
                     <BreadcrumbItem>{{components}}</BreadcrumbItem>
                     <BreadcrumbItem>{{layout}}</BreadcrumbItem>
                 </Breadcrumb>
                 <Content>
                     <Layout>
                         <Sider hide-trigger :style="{background: '#fff'}">
-                            <Menu :active-name="layout" theme="light" width="auto" :open-names="['Vue Router']" accordion @on-open-change="setComponents" @on-select="setLayout" >
-                                <Submenu name="Vue Router">
+                            <Menu :active-name="layout" theme="light" width="auto" :open-names="['1']" @on-select="setLayout">
+                                <Submenu name="1">
                                     <template slot="title">
                                         <Icon type="ios-navigate"></Icon>
-                                        Vue Router
+                                        基础知识
                                     </template>
-                                    <MenuItem name="FirstPage" to="first-page">FirstPage</MenuItem>
-                                    <MenuItem name="SecondPage" to='second-page'>SecondPage</MenuItem>
-                                    <MenuItem name="命名视图" to="name-view">命名视图</MenuItem>
+                                    <MenuItem name="基础概念" to="basic-concept">基础概念</MenuItem>
+                                    <MenuItem name="Chapter4+5" to="chapter-page45">Chapter4、5</MenuItem>
                                 </Submenu>
-                                <Submenu name="VueX">
+                                <!-- <Submenu name="2">
                                     <template slot="title">
                                         <Icon type="ios-keypad"></Icon>
-                                        VueX
+                                        Float
                                     </template>
-                                    <MenuItem name="vuex测试" to="vuex-test">vuex测试</MenuItem>
-
-                                </Submenu>
+                                    <MenuItem name="float示例" to="float-page">float示例</MenuItem>
+                                    <MenuItem name="清除浮动" to="clear-page">清除浮动</MenuItem>
+                                </Submenu> -->
                                 <!-- <Submenu name="3">
                                     <template slot="title">
                                         <Icon type="ios-analytics"></Icon>
@@ -44,7 +43,6 @@
                     </Layout>
                 </Content>
             </Layout>
-            <!-- <Footer class="layout-footer-center">2018-2019 &copy; feng</Footer> -->
         </Layout>
     </div>
 </div>
@@ -55,18 +53,17 @@ export default {
   name: 'App',
   data () {
     return {
-      components: 'Vue Router',
-      layout: 'FirstPage'
+    //   home: 'JS',
+      components: '基础知识',
+      layout: '基础概念'
     };
   },
   methods: {
+    setComponents (name) {
+      this.components = name;
+    },
     setLayout (name) {
       this.layout = name;
-    },
-    setComponents (name) {
-      if (name.length) {
-        this.components = name[0];
-      }
     }
   }
 };

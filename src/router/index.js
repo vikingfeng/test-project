@@ -15,13 +15,14 @@ export default new Router({
       name: 'HelloWorld',
       component: () => import('@/components/VueTest')
     },
+    // 一、vue 模块
     {
       path: '/vue-page',
       name: 'VueTest',
       component: () => import('@/components/VueTest'),
       children: [
         {
-          path: '/',
+          path: '/vue-index-page',
           name: 'VueIndexPage',
           component: () => import('@/views/vue-router/SecondPage')
         },
@@ -56,16 +57,30 @@ export default new Router({
               }
             }
           ]
+        },
+        // vuex
+        {
+          path: '/vuex-test',
+          name: 'VuexTest',
+          component: () => import('@/views/vue-vuex/VuexTest'),
+          children: [
+            // {
+            //   path: '/page-second',
+            //   name: 'PageSecond',
+            //   component: () => import('@/views/vue-router/SecondPage')
+            // }
+          ]
         }
       ]
     },
+    // 二、css模块
     {
       path: '/css-page',
       name: 'Css',
       component: () => import('@/components/Css'),
       children: [
         {
-          path: '/',
+          path: '/css-index-page',
           name: 'CssIndexPage',
           component: () => import('@/views/css/float/FloatPage')
         },
@@ -78,7 +93,59 @@ export default new Router({
           path: '/clear-page',
           name: 'ClearPage',
           component: () => import('@/views/css/float/ClearPage')
+        },
+        {
+          path: '/css-some-tips',
+          name: 'sometips',
+          component: () => import('@/views/css/tips/sometips')
         }
+      ]
+    },
+    // 三、JavaScript
+    {
+      path: '/js-page',
+      name: 'JavaScript',
+      component: () => import('@/components/JavaScript'),
+      children: [
+        {
+          path: '/basic-concept',
+          name: 'BasicConcept',
+          component: () => import('@/views/JavaScript/BasicKnowledge/BasicConcept')
+        },
+        {
+          path: '/chapter-page45',
+          name: 'Chapter45',
+          component: () => import('@/views/JavaScript/BasicKnowledge/Chapter45')
+        }
+
+      ]
+    },
+    // 四、Applets小程序
+    {
+      path: '/applets-page',
+      name: 'Applets',
+      component: () => import('@/components/Applets'),
+      children: [
+        {
+          path: '/applets-tips',
+          name: 'AppletsTips',
+          component: () => import('@/views/applets/AppletsTips')
+        }
+
+      ]
+    },
+    // 四、Expansion
+    {
+      path: '/expansion-page',
+      name: 'Expansion',
+      component: () => import('@/components/Expansion'),
+      children: [
+        {
+          path: '/execution-mechanism',
+          name: 'ExecutionMechanism',
+          component: () => import('@/views/expansion/ExecutionMechanism')
+        }
+
       ]
     }
 
