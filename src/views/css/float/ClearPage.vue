@@ -25,7 +25,7 @@
 </template>
 <script>
 export default {
-  name: 'Float'
+  name: 'ClearPage'
 
 };
 </script>

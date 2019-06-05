@@ -13,13 +13,17 @@
                             <Icon type="ios-keypad"></Icon>
                             Css
                         </MenuItem>
-                        <MenuItem name="导航3" to="css-page">
+                        <MenuItem name="导航3" to="js-page">
                             <Icon type="ios-analytics"></Icon>
-                            导航3
+                            JS
                         </MenuItem>
-                        <MenuItem name="导航4">
+                        <MenuItem name="导航4" to="applets-page">
                             <Icon type="ios-paper"></Icon>
-                            导航4
+                            Applets
+                        </MenuItem>
+                        <MenuItem name="导航5" to="expansion-page">
+                            <Icon type="ios-paper"></Icon>
+                            Expansion
                         </MenuItem>
                     </div>
                 </Menu>
@@ -119,7 +123,7 @@ export default {
     /* left: 20px; */
 }
 .layout-nav{
-    width: 420px;
+    width: 500px;
     margin: 0 auto;
     margin-right: 20px;
 }
