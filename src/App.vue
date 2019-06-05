@@ -17,7 +17,11 @@
                             <Icon type="ios-analytics"></Icon>
                             JS
                         </MenuItem>
-                        <MenuItem name="导航4" to="expansion-page">
+                        <MenuItem name="导航4" to="applets-page">
+                            <Icon type="ios-paper"></Icon>
+                            Applets
+                        </MenuItem>
+                        <MenuItem name="导航5" to="expansion-page">
                             <Icon type="ios-paper"></Icon>
                             Expansion
                         </MenuItem>
@@ -119,7 +123,7 @@ export default {
     /* left: 20px; */
 }
 .layout-nav{
-    width: 420px;
+    width: 500px;
     margin: 0 auto;
     margin-right: 20px;
 }

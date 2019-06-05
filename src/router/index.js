@@ -93,6 +93,11 @@ export default new Router({
           path: '/clear-page',
           name: 'ClearPage',
           component: () => import('@/views/css/float/ClearPage')
+        },
+        {
+          path: '/css-some-tips',
+          name: 'sometips',
+          component: () => import('@/views/css/tips/sometips')
         }
       ]
     },
@@ -111,6 +116,20 @@ export default new Router({
           path: '/chapter-page45',
           name: 'Chapter45',
           component: () => import('@/views/JavaScript/BasicKnowledge/Chapter45')
+        }
+
+      ]
+    },
+    // 四、Applets小程序
+    {
+      path: '/applets-page',
+      name: 'Applets',
+      component: () => import('@/components/Applets'),
+      children: [
+        {
+          path: '/applets-tips',
+          name: 'AppletsTips',
+          component: () => import('@/views/applets/AppletsTips')
         }
 
       ]

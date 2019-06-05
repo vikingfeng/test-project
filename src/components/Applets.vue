@@ -3,7 +3,7 @@
         <Layout style="">
             <Layout >
                 <Breadcrumb :style="{margin: '16px 10px'}">
-                    <BreadcrumbItem>Css</BreadcrumbItem>
+                    <BreadcrumbItem>Expansion</BreadcrumbItem>
                     <BreadcrumbItem>{{components}}</BreadcrumbItem>
                     <BreadcrumbItem>{{layout}}</BreadcrumbItem>
                 </Breadcrumb>
@@ -14,18 +14,19 @@
                                 <Submenu name="1">
                                     <template slot="title">
                                         <Icon type="ios-navigate"></Icon>
+                                        小程序
+                                    </template>
+                                    <MenuItem name="踩坑" to="applets-tips">踩坑</MenuItem>
+                                    <MenuItem name="地图" to="basic-concept">地图</MenuItem>
+                                </Submenu>
+                                <!-- <Submenu name="2">
+                                    <template slot="title">
+                                        <Icon type="ios-keypad"></Icon>
                                         Float
                                     </template>
                                     <MenuItem name="float示例" to="float-page">float示例</MenuItem>
                                     <MenuItem name="清除浮动" to="clear-page">清除浮动</MenuItem>
-                                </Submenu>
-                                <Submenu name="2">
-                                    <template slot="title">
-                                        <Icon type="ios-keypad"></Icon>
-                                        Tips
-                                    </template>
-                                    <MenuItem name="布局小技巧" to="css-some-tips">布局小技巧</MenuItem>
-                                </Submenu>
+                                </Submenu> -->
                                 <!-- <Submenu name="3">
                                     <template slot="title">
                                         <Icon type="ios-analytics"></Icon>
@@ -52,9 +53,9 @@ export default {
   name: 'App',
   data () {
     return {
-      home: 'Css',
-      components: 'Float',
-      layout: 'float示例'
+    //   home: 'Expansion',
+      components: '扩展',
+      layout: '地图'
     };
   },
   methods: {
