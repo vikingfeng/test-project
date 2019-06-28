@@ -10,8 +10,8 @@
                 <Content>
                     <Layout>
                         <Sider hide-trigger :style="{background: '#fff'}">
-                            <Menu :active-name="layout" theme="light" width="auto" :open-names="['1']" @on-select="setLayout">
-                                <Submenu name="1">
+                            <Menu :active-name="layout" theme="light" width="auto" :open-names="['Float']" accordion @on-open-change="setComponents" @on-select="setLayout">
+                                <Submenu name="Float">
                                     <template slot="title">
                                         <Icon type="ios-navigate"></Icon>
                                         Float
@@ -19,7 +19,7 @@
                                     <MenuItem name="float示例" to="float-page">float示例</MenuItem>
                                     <MenuItem name="清除浮动" to="clear-page">清除浮动</MenuItem>
                                 </Submenu>
-                                <Submenu name="2">
+                                <Submenu name="Tips">
                                     <template slot="title">
                                         <Icon type="ios-keypad"></Icon>
                                         Tips
@@ -36,7 +36,7 @@
                                 </Submenu> -->
                             </Menu>
                         </Sider>
-                        <Content :style="{padding: '24px', minHeight: '280px', background: '#fff'}">
+                        <Content :style="{padding: '24px', height:'690px', overflow:'auto', background: '#fff'}">
                             <router-view></router-view>
                         </Content>
                     </Layout>
@@ -59,7 +59,9 @@ export default {
   },
   methods: {
     setComponents (name) {
-      this.components = name;
+      if (name.length) {
+        this.components = name[0];
+      }
     },
     setLayout (name) {
       this.layout = name;

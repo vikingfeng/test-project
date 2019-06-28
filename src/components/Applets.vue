@@ -10,14 +10,15 @@
                 <Content>
                     <Layout>
                         <Sider hide-trigger :style="{background: '#fff'}">
-                            <Menu :active-name="layout" theme="light" width="auto" :open-names="['1']" @on-select="setLayout">
-                                <Submenu name="1">
+                            <Menu :active-name="layout" theme="light" width="auto" :open-names="['小程序']" accordion @on-open-change="setComponents" @on-select="setLayout">
+                                <Submenu name="小程序">
                                     <template slot="title">
                                         <Icon type="ios-navigate"></Icon>
                                         小程序
                                     </template>
-                                    <MenuItem name="踩坑" to="applets-tips">踩坑</MenuItem>
-                                    <MenuItem name="地图" to="basic-concept">地图</MenuItem>
+                                    <MenuItem name="踩坑" to="some-pit">踩坑</MenuItem>
+                                    <MenuItem name="技巧" to="applets-tips">技巧</MenuItem>
+                                    <MenuItem name="地图" to="applets-tips">地图</MenuItem>
                                 </Submenu>
                                 <!-- <Submenu name="2">
                                     <template slot="title">
@@ -37,7 +38,7 @@
                                 </Submenu> -->
                             </Menu>
                         </Sider>
-                        <Content :style="{padding: '24px', minHeight: '280px', background: '#fff'}">
+                        <Content :style="{padding: '24px', height:'690px', overflow:'auto', background: '#fff'}">
                             <router-view></router-view>
                         </Content>
                     </Layout>
@@ -54,13 +55,15 @@ export default {
   data () {
     return {
     //   home: 'Expansion',
-      components: '扩展',
-      layout: '地图'
+      components: '小程序',
+      layout: '踩坑'
     };
   },
   methods: {
     setComponents (name) {
-      this.components = name;
+      if (name.length) {
+        this.components = name[0];
+      }
     },
     setLayout (name) {
       this.layout = name;

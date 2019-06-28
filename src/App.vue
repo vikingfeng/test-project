@@ -34,7 +34,7 @@
                     <BreadcrumbItem>{{components}}</BreadcrumbItem>
                     <BreadcrumbItem>{{layout}}</BreadcrumbItem>
                 </Breadcrumb> -->
-                <Content :style="{padding: '24px', minHeight: '280px', background: '#fff'}">
+                <Content :style="{padding: '24px', minHeight: '280px', height:'800px', overflow:'auto', background: '#fff'}">
 
                     <!-- <Layout> -->
                         <!--<Sider hide-trigger :style="{background: '#fff'}">

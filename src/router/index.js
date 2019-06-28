@@ -13,14 +13,21 @@ export default new Router({
     {
       path: '/',
       name: 'HelloWorld',
-      component: () => import('@/components/VueTest')
+      // component: () => import('@/components/VueTest')
+      redirect: '/vue-page'
     },
     // 一、vue 模块
     {
       path: '/vue-page',
-      name: 'VueTest',
+      name: '',
       component: () => import('@/components/VueTest'),
+
       children: [
+        {
+          path: '/',
+          name: 'VueDefaultPage',
+          redirect: '/first-page'
+        },
         {
           path: '/vue-index-page',
           name: 'VueIndexPage',
@@ -76,9 +83,14 @@ export default new Router({
     // 二、css模块
     {
       path: '/css-page',
-      name: 'Css',
+      name: '',
       component: () => import('@/components/Css'),
       children: [
+        {
+          path: '/',
+          name: 'CssDefaultPage',
+          redirect: '/css-index-page'
+        },
         {
           path: '/css-index-page',
           name: 'CssIndexPage',
@@ -104,9 +116,14 @@ export default new Router({
     // 三、JavaScript
     {
       path: '/js-page',
-      name: 'JavaScript',
+      name: '',
       component: () => import('@/components/JavaScript'),
       children: [
+        {
+          path: '/',
+          name: 'JsDefaultPage',
+          redirect: '/basic-concept'
+        },
         {
           path: '/basic-concept',
           name: 'BasicConcept',
@@ -123,9 +140,19 @@ export default new Router({
     // 四、Applets小程序
     {
       path: '/applets-page',
-      name: 'Applets',
+      name: '',
       component: () => import('@/components/Applets'),
       children: [
+        {
+          path: '/',
+          name: 'AppletsDefaultPage',
+          redirect: '/some-pit'
+        },
+        {
+          path: '/some-pit',
+          name: 'SomePit',
+          component: () => import('@/views/applets/SomePit')
+        },
         {
           path: '/applets-tips',
           name: 'AppletsTips',
@@ -134,12 +161,17 @@ export default new Router({
 
       ]
     },
-    // 四、Expansion
+    // 五、Expansion
     {
       path: '/expansion-page',
-      name: 'Expansion',
+      name: '',
       component: () => import('@/components/Expansion'),
       children: [
+        {
+          path: '/',
+          name: 'ExpansionDefaultPage',
+          redirect: '/execution-mechanism'
+        },
         {
           path: '/execution-mechanism',
           name: 'ExecutionMechanism',

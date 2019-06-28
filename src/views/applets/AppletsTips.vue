@@ -1,41 +1,32 @@
 <template>
-<Collapse v-model="value" class="basic-concept">
-        <Panel name="1">
-          数据绑定
-            <div slot="content">
-            <ul>
-              <li><span class="red">数据流向是单向的，即视图变化不会影响对象状态</span></li>
-              <li><span class="red">视图上的数据都必须用过事件传递给对象，只有用户操作视图，才能获取到数据，并更新对象状态。调用this.setData（）方法实现视图的部分渲染</span></li>
-              <li>eg: this.setData({isDisabled: false});</li>
-
-              <li><span class="red">页面多个输入框可以使用公用的setData来赋值，通过 类似“data-datakey='address'”来传赋值的key</span></li>
-                <li><btn type="primary" @click.native="show=true" >拓展示例</btn></li>
-            </ul>
-            </div>
-        </Panel>
-        <Panel name="2">
-          组件
-            <div slot="content">
-            <ul>
-              <li><span class="red">子组件triggerEvent触发事件会在父组件的onShow事件前触发</span></li>
-              <li><span class="red">微信API:选图片wx.chooseImage、预览图片wx.previewImage都会触发页面的onShow()、onHide()事件</span></li>
-            </ul>
-            </div>
-        </Panel>
-        <Modal
-        v-model="show"
-        title="拓展示例"
-        :footer-hide="true"
-        >
-        <div>
-          wxml文件：输入框</br>
-          <img src="./images/input.png" alt="" height="300" width="490">
-          js文件：输入框赋值（共用）</br>
-          <img src="./images/setinput.png" alt="" height="120" width="490">
-        </div>
-
-        </Modal>
-    </Collapse>
+<div class="container">
+  <div class="card-item">
+    <Card shadow dis-hover>
+      <p slot="title">1、自定义顶部标题栏时计算高度</p>
+      <pre>解决：
+  wx.getSystemInfo({
+    success: e => {
+      this.globalData.statusBar = e.statusBarHeight; //状态栏高度
+      let custom = wx.getMenuButtonBoundingClientRect(); //菜单按钮(右上角)
+      this.globalData.custom = custom;
+      this.globalData.customBar =
+        custom.bottom + custom.top - e.statusBarHeight;
+      //计算得到定义的状态栏高度
+    }
+  });</pre>
+    </Card>
+  </div>
+  <div class="card-item">
+    <Card shadow dis-hover>
+      <p slot="title">2、在页面外刷新当前页</p>
+      <pre>解决：
+  if (getCurrentPages().length !== 0) {
+    //刷新当前页面的数据
+    getCurrentPages()[getCurrentPages().length - 1].onLoad();
+  }</pre>
+    </Card>
+  </div>
+</div>
 </template>
 <script>
 import btn from '@/components/component/btn.vue';
@@ -52,7 +43,13 @@ export default {
 };
 </script>
 <style scoped lang="less">
-.basic-concept{
+.container{
+  background: #f0f2f5;
+  .card-item{
+    width:50%;
+    min-width: 600px;
+    padding: 20px;
+  }
   .red{
     color: red;
   }

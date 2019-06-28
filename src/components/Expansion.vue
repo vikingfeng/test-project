@@ -10,15 +10,15 @@
                 <Content>
                     <Layout>
                         <Sider hide-trigger :style="{background: '#fff'}">
-                            <Menu :active-name="layout" theme="light" width="auto" :open-names="['1']" @on-select="setLayout">
-                                <Submenu name="1">
+                            <Menu :active-name="layout" theme="light" width="auto" accordion :open-names="['扩展']" @on-open-change="setComponents" @on-select="setLayout">
+                                <Submenu name="扩展">
                                     <template slot="title">
                                         <Icon type="ios-navigate"></Icon>
                                         扩展
                                     </template>
                                     <MenuItem name="JS执行机制" to="execution-mechanism">JS执行机制</MenuItem>
-                                    <MenuItem name="地图" to="basic-concept">地图</MenuItem>
-                                    <MenuItem name="清除浮动" to="clear-page">图表</MenuItem>
+                                    <MenuItem name="地图" to="execution-mechanism">地图</MenuItem>
+                                    <MenuItem name="清除浮动" to="execution-mechanism">图表</MenuItem>
                                 </Submenu>
                                 <!-- <Submenu name="2">
                                     <template slot="title">
@@ -38,7 +38,7 @@
                                 </Submenu> -->
                             </Menu>
                         </Sider>
-                        <Content :style="{padding: '24px', minHeight: '280px', background: '#fff'}">
+                        <Content :style="{padding: '24px', height:'690px', overflow:'auto', background: '#fff'}">
                             <router-view></router-view>
                         </Content>
                     </Layout>
@@ -56,12 +56,14 @@ export default {
     return {
     //   home: 'Expansion',
       components: '扩展',
-      layout: '地图'
+      layout: 'JS执行机制'
     };
   },
   methods: {
     setComponents (name) {
-      this.components = name;
+      if (name.length) {
+        this.components = name[0];
+      }
     },
     setLayout (name) {
       this.layout = name;

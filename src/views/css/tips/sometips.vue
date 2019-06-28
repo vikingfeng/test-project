@@ -13,11 +13,20 @@
         </Panel>
         <Panel name="2">
             数据类型(6种)
-            <p slot="content">
-              <ul>
+            <div slot="content">
+              <row>
+                <col span="12"><img src="../images/两端对齐css.png" alt="" height="300" width="490"></col>
+                <col span="12">
+                <pre>
+                  tips:
+                  1、text-align: justify;对最后一行不起作用（so单行不起作用）；
+                  2、注意每个单词之间都有空格
+                  3、多行内容也可以使用同样的方法，只是最后一行如果不去加空格，还是不会处理，只是默认的往左对齐
+                </pre>
 
-              </ul>
-            </p>
+                </col>
+              </row>
+            </div>
         </Panel>
     </Collapse>
 </template>

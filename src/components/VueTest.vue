@@ -38,7 +38,7 @@
                                 </Submenu> -->
                             </Menu>
                         </Sider>
-                        <Content :style="{padding: '24px', minHeight: '280px', background: '#fff'}">
+                        <Content :style="{padding: '24px', height:'690px', overflow:'auto', background: '#fff'}">
                             <router-view></router-view>
                         </Content>
                     </Layout>
