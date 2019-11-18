@@ -3,32 +3,29 @@
         <Layout style="">
             <Layout >
                 <Breadcrumb :style="{margin: '16px 10px'}">
-                    <BreadcrumbItem>Expansion</BreadcrumbItem>
+                    <BreadcrumbItem>Css</BreadcrumbItem>
                     <BreadcrumbItem>{{components}}</BreadcrumbItem>
                     <BreadcrumbItem>{{layout}}</BreadcrumbItem>
                 </Breadcrumb>
                 <Content>
                     <Layout>
                         <Sider hide-trigger :style="{background: '#fff'}">
-                            <Menu :active-name="layout" theme="light" width="auto" accordion :open-names="['扩展']" @on-open-change="setComponents" @on-select="setLayout">
-                                <Submenu name="扩展">
+                            <Menu :active-name="layout" theme="light" width="auto" :open-names="['Float']" accordion @on-open-change="setComponents" @on-select="setLayout">
+                                <Submenu name="Float">
                                     <template slot="title">
                                         <Icon type="ios-navigate"></Icon>
-                                        扩展
-                                    </template>
-                                    <MenuItem name="JS执行机制" to="execution-mechanism">JS执行机制</MenuItem>
-                                    <MenuItem name="一些算法" to="algorithm">一些算法</MenuItem>
-                                    <MenuItem name="地图" to="execution-mechanism">地图</MenuItem>
-                                    <MenuItem name="清除浮动" to="execution-mechanism">图表</MenuItem>
-                                </Submenu>
-                                <!-- <Submenu name="2">
-                                    <template slot="title">
-                                        <Icon type="ios-keypad"></Icon>
                                         Float
                                     </template>
-                                    <MenuItem name="float示例" to="float-page">float示例</MenuItem>
-                                    <MenuItem name="清除浮动" to="clear-page">清除浮动</MenuItem>
-                                </Submenu> -->
+                                    <MenuItem name="default1" to="default1">default1</MenuItem>
+                                    <MenuItem name="default2" to="default2">default2</MenuItem>
+                                </Submenu>
+                                <Submenu name="Tips">
+                                    <template slot="title">
+                                        <Icon type="ios-keypad"></Icon>
+                                        Tips
+                                    </template>
+                                    <MenuItem name="布局小技巧" to="css-some-tips">布局小技巧</MenuItem>
+                                </Submenu>
                                 <!-- <Submenu name="3">
                                     <template slot="title">
                                         <Icon type="ios-analytics"></Icon>
@@ -55,9 +52,9 @@ export default {
   name: 'App',
   data () {
     return {
-    //   home: 'Expansion',
-      components: '扩展',
-      layout: 'JS执行机制'
+      home: 'Css',
+      components: 'Float',
+      layout: 'float示例'
     };
   },
   methods: {

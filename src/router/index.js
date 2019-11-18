@@ -176,6 +176,34 @@ export default new Router({
           path: '/execution-mechanism',
           name: 'ExecutionMechanism',
           component: () => import('@/views/expansion/ExecutionMechanism')
+        },
+        {
+          path: '/algorithm',
+          name: 'Algorithm',
+          component: () => import('@/views/expansion/Algorithm')
+        }
+
+      ]
+    },
+    {
+      path: '/instance-page',
+      name: '',
+      component: () => import('@/components/Instance'),
+      children: [
+        {
+          path: '/',
+          name: 'InstanceDefaultPage',
+          redirect: '/default1'
+        },
+        {
+          path: '/default1',
+          name: 'AppletsTips1',
+          component: () => import('@/views/instance/AppletsTips1')
+        },
+        {
+          path: '/default2',
+          name: 'SomePit1',
+          component: () => import('@/views/instance/SomePit1')
         }
 
       ]

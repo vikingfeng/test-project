@@ -25,6 +25,10 @@
                             <Icon type="ios-paper"></Icon>
                             Expansion
                         </MenuItem>
+                        <MenuItem name="导航6" to="instance-page">
+                            <Icon type="ios-paper"></Icon>
+                            Instance
+                        </MenuItem>
                     </div>
                 </Menu>
             </Header>
@@ -123,7 +127,7 @@ export default {
     /* left: 20px; */
 }
 .layout-nav{
-    width: 500px;
+    width: 620px;
     margin: 0 auto;
     margin-right: 20px;
 }
